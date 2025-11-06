@@ -96,6 +96,7 @@ export const data = {
         'Designed and developed a personal portfolio showcasing professional skills, experience, and projects. Implemented multi-language support, responsive layout, and smooth navigation using Angular routing. Hosted on Vercel for fast performance and global access.',
       tech: ['Angular', 'Vercel'],
       liveDemo: 'https://portfolio-react-blush-eight.vercel.app/',
+      image: 'portfolio-app-image',
     },
   ],
   skills: [

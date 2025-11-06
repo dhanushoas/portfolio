@@ -17,6 +17,12 @@
       "description": "Screenshot of the Calculator App",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/datacode-87922.appspot.com/o/calc.png?alt=media&token=90835581-b7ec-4d01-981a-8cb2afc72474",
       "imageHint": "calculator ui"
+    },
+    {
+      "id": "portfolio-app-image",
+      "description": "Screenshot of the Portfolio App",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/datacode-87922.appspot.com/o/portfolio.png?alt=media&token=b04b7579-a9bb-42d3-9860-92c744531c70",
+      "imageHint": "portfolio website"
     }
   ]
 }
