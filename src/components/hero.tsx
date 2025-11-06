@@ -40,10 +40,9 @@ export function Hero() {
             <Image
               src={profilePic.imageUrl}
               alt={data.name}
+              fill
               data-ai-hint={profilePic.imageHint}
-              width={256}
-              height={256}
-              className="object-cover w-full h-full"
+              className="object-cover"
             />
           </div>
         )}
