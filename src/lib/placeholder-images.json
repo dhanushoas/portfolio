@@ -23,6 +23,18 @@
       "description": "Screenshot of the Portfolio App",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/datacode-87922.appspot.com/o/portfolio.png?alt=media&token=b04b7579-a9bb-42d3-9860-92c744531c70",
       "imageHint": "portfolio website"
+    },
+    {
+      "id": "employee-portal-image",
+      "description": "Screenshot of the OASYS Employee Portal",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/datacode-87922.appspot.com/o/employeeportal.png?alt=media&token=1eac08bd-4b31-496d-a262-5fcd8b52bf21",
+      "imageHint": "employee portal"
+    },
+    {
+      "id": "cooptex-erp-image",
+      "description": "Screenshot of the COOPTEX ERP System",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/datacode-87922.appspot.com/o/cooptex.png?alt=media&token=3bd5812e-0047-401f-b4e3-bcb7e56328d1",
+      "imageHint": "erp system"
     }
   ]
 }

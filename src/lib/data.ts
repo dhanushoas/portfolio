@@ -65,12 +65,14 @@ export const data = {
       description:
         'Developed and implemented modules for inventory, sales, and finance, ensuring smooth and efficient data flow across departments. Leveraged Angular for dynamic, responsive front-end development. Used PostgreSQL for secure, scalable database management. Collaborated with cross-functional teams to optimize performance and deliver a seamless user experience.',
       tech: ['Angular', 'Java Spring Boot', 'PostgreSQL'],
+      image: 'cooptex-erp-image',
     },
     {
       name: 'OASYS Employee Portal',
       description:
         'Designed and developed a smart, all-in-one platform for managing employee information, attendance, leave, approvals, and tasks. Implemented easy-to-use workflows, one-time approval systems, and real-time updates to simplify daily HR activities. Built with a clean, intuitive user interface for enhanced usability and productivity. Ensured high efficiency, security, and transparency to keep teams connected and processes streamlined. Integrated React for an interactive front end, Spring Boot for robust backend services, and MySQL for reliable data management.',
       tech: ['React', 'Spring Boot', 'MySQL'],
+      image: 'employee-portal-image',
     },
   ],
   personalProjects: [
