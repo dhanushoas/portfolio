@@ -7,6 +7,7 @@ import placeholderImages from '@/lib/placeholder-images.json';
 const profilePic = placeholderImages.placeholderImages.find(p => p.id === 'profile-picture');
 
 export function Hero() {
+  const resumeUrl = "https://docs.google.com/document/d/1AELTJqPBk1Cm-igAdXzR0EeCqMJL6gCx_cC82R7f9VM/export?format=pdf";
   return (
     <div className="flex flex-col-reverse items-center gap-12 text-center md:flex-row md:text-left">
       <div className="flex-1 space-y-6">
@@ -28,9 +29,11 @@ export function Hero() {
           {data.summary}
         </p>
          <div className="flex gap-4 justify-center md:justify-start">
-           <Button>
-             <Download className="mr-2 h-4 w-4" />
-             Download CV
+           <Button asChild>
+             <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
+             </a>
            </Button>
          </div>
       </div>
