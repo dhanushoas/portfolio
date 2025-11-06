@@ -80,6 +80,7 @@ export const data = {
         'A full-stack TODO application using the MERN stack (MongoDB, Express.js, React, Node.js). Features include user authentication with Google Sign-In, allowing users to manage their tasks securely.',
       tech: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Vercel'],
       liveDemo: 'https://todoapplatest.vercel.app',
+      image: 'todo-app-image',
     },
     {
       name: 'Calculator Application',
