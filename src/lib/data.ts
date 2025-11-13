@@ -112,7 +112,6 @@ export const data = {
         { name: 'TypeScript', icon: TypeScript },
         { name: 'CSS3', icon: null },
         { name: 'Bootstrap 5', icon: Bootstrap },
-        { name: 'Tailwind CSS', icon: TailwindCSS },
       ],
     },
     {
