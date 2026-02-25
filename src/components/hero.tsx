@@ -36,7 +36,7 @@ export function Hero() {
         </p>
         <div className="flex gap-4 justify-center md:justify-start">
           <Button asChild>
-            <a href={resumeUrl} download="Dhanush Kumar T.docx" target="_blank" rel="noopener noreferrer">
+            <a href={resumeUrl} download="Dhanush_Kumar_T.docx" target="_blank" rel="noopener noreferrer">
               <Download className="mr-2 h-4 w-4" />
               Download CV
             </a>

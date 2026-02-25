@@ -26,7 +26,7 @@ export const data = {
   email: 'dhanushkrock@gmail.com',
   mobile: '7708522584',
   location: 'Trichy, Tamil Nadu',
-  resumeUrl: '/Dhanush Kumar T.docx',
+  resumeUrl: '/Dhanush_Kumar_T.docx',
   socials: [
     {
       name: 'LinkedIn',
@@ -90,14 +90,8 @@ export const data = {
       tech: ['React', 'Spring Boot', 'MySQL'],
       image: 'employee-portal-image',
     },
-    {
-      name: 'SMCC - Cricket Championship',
-      description:
-        'Developed a live cricket scoring and tournament management platform. Features real-time score updates, match schedules, points tables, and detailed player statistics. Built with a focus on performance and real-time data sync to provide a seamless spectator experience.',
-      tech: ['React', 'Node.js', 'Socket.io', 'MySQL'],
-      liveDemo: 'https://smcc-web.vercel.app/',
-      image: 'smcc-project-image',
-    },
+  ],
+  personalProjects: [
     {
       name: 'Tamil Nadu Tourism',
       description:
@@ -106,8 +100,6 @@ export const data = {
       liveDemo: 'https://tt-frontend.vercel.app/',
       image: 'tn-tourism-image',
     },
-  ],
-  personalProjects: [
     {
       name: 'TODO App',
       description:
@@ -125,12 +117,12 @@ export const data = {
       image: 'calculator-app-image',
     },
     {
-      name: 'Portfolio Application',
+      name: 'SMCC - Cricket',
       description:
-        'Designed and developed a personal portfolio showcasing professional skills, experience, and projects. Implemented multi-language support, responsive layout, and smooth navigation using Angular routing. Hosted on Vercel for fast performance and global access.',
-      tech: ['React', 'Vercel'],
-      liveDemo: 'https://portfolio-react-blush-eight.vercel.app/',
-      image: 'portfolio-app-image',
+        'Developed a live cricket scoring and tournament management platform. Features real-time score updates, match schedules, points tables, and detailed player statistics. Built with a focus on performance and real-time data sync to provide a seamless spectator experience.',
+      tech: ['React', 'Node.js', 'Socket.io', 'MySQL'],
+      liveDemo: 'https://smcc-web.vercel.app/',
+      image: 'smcc-project-image',
     },
   ],
   skills: [
