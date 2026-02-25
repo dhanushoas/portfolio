@@ -16,8 +16,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Prathap's Portfolio",
-  description: 'Full Stack Developer Portfolio for Prathap Shanmugam',
+  title: "Dhanush Portfolio",
+  description: 'Full Stack Developer Portfolio for Dhanush Kumar T',
 };
 
 export default function RootLayout({

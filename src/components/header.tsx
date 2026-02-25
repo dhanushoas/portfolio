@@ -19,7 +19,7 @@ const navLinks = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -50,22 +50,17 @@ export function Header() {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-             <div className="hidden md:flex items-center gap-2">
-                <Button variant="ghost" size="icon" asChild>
-                  <a href={data.socials.find(s => s.name === 'GitHub')?.url} target="_blank" rel="noreferrer">
-                    <Github className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button variant="ghost" size="icon" asChild>
-                  <a href={data.socials.find(s => s.name === 'GitLab')?.url} target="_blank" rel="noreferrer">
-                    <Gitlab className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button variant="ghost" size="icon" asChild>
-                  <a href={data.socials.find(s => s.name === 'LinkedIn')?.url} target="_blank" rel="noreferrer">
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                </Button>
+            <div className="hidden md:flex items-center gap-2">
+              <Button variant="ghost" size="icon" asChild>
+                <a href={data.socials.find(s => s.name === 'GitHub')?.url} target="_blank" rel="noreferrer">
+                  <Github className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href={data.socials.find(s => s.name === 'LinkedIn')?.url} target="_blank" rel="noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </Button>
             </div>
             <ThemeToggleButton />
             <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>

@@ -7,7 +7,7 @@ import placeholderImages from '@/lib/placeholder-images.json';
 const profilePic = placeholderImages.placeholderImages.find(p => p.id === 'profile-picture');
 
 export function Hero() {
-  const resumeUrl = "https://docs.google.com/document/d/1AELTJqPBk1Cm-igAdXzR0EeCqMJL6gCx_cC82R7f9VM/export?format=pdf";
+  const resumeUrl = data.resumeUrl;
   return (
     <div className="flex flex-col-reverse items-center gap-12 text-center md:flex-row md:text-left">
       <div className="flex-1 space-y-6">
@@ -24,18 +24,24 @@ export function Hero() {
             <Phone className="h-4 w-4" />
             <a href={`tel:${data.mobile}`} className="hover:text-foreground">{data.mobile}</a>
           </div>
+          {data.location && (
+            <div className="flex items-center gap-2">
+              <span className="text-muted-foreground">Location:</span>
+              <span>{data.location}</span>
+            </div>
+          )}
         </div>
         <p className="max-w-prose text-muted-foreground leading-relaxed">
           {data.summary}
         </p>
-         <div className="flex gap-4 justify-center md:justify-start">
-           <Button asChild>
-             <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-             </a>
-           </Button>
-         </div>
+        <div className="flex gap-4 justify-center md:justify-start">
+          <Button asChild>
+            <a href={resumeUrl} download="Dhanush Kumar T.docx" target="_blank" rel="noopener noreferrer">
+              <Download className="mr-2 h-4 w-4" />
+              Download CV
+            </a>
+          </Button>
+        </div>
       </div>
       <div className="relative">
         {profilePic && (
@@ -44,9 +50,11 @@ export function Hero() {
               src={profilePic.imageUrl}
               alt={data.name}
               fill
+              priority
+              quality={100}
               data-ai-hint={profilePic.imageHint}
               className="object-cover"
-              sizes="(max-width: 640px) 192px, 256px"
+              sizes="(max-width: 640px) 384px, 512px"
             />
           </div>
         )}

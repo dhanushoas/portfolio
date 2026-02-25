@@ -2,8 +2,8 @@
   "placeholderImages": [
     {
       "id": "profile-picture",
-      "description": "Prathap Shanmugam profile picture",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/datacode-87922.appspot.com/o/WhatsApp%20Image%202025-09-08%20at%2010.43.19%20AM.jpeg?alt=media&token=16131b6b-d5ae-4b42-8cd2-06efe01e3d1d",
+      "description": "Dhanush Kumar T profile picture",
+      "imageUrl": "/profile.jpg",
       "imageHint": "professional headshot"
     },
     {
@@ -21,7 +21,7 @@
     {
       "id": "portfolio-app-image",
       "description": "Screenshot of the Portfolio App",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/datacode-87922.appspot.com/o/portfolio.png?alt=media&token=b04b7579-a9bb-42d3-9860-92c744531c70",
+      "imageUrl": "/portfolio-app.jpg",
       "imageHint": "portfolio website"
     },
     {
@@ -33,8 +33,20 @@
     {
       "id": "cooptex-erp-image",
       "description": "Screenshot of the COOPTEX ERP System",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/datacode-87922.appspot.com/o/cooptex.png?alt=media&token=3bd5812e-0047-401f-b4e3-bcb7e56328d1",
+      "imageUrl": "/cooptex.png",
       "imageHint": "erp system"
+    },
+    {
+      "id": "smcc-project-image",
+      "description": "Screenshot of the SMCC Cricket Championship",
+      "imageUrl": "/smcc.jpg",
+      "imageHint": "cricket scoring app"
+    },
+    {
+      "id": "tn-tourism-image",
+      "description": "Screenshot of the Tamil Nadu Tourism website",
+      "imageUrl": "/tn-tourism.jpg",
+      "imageHint": "travel and tourism website"
     }
   ]
 }

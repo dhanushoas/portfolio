@@ -18,11 +18,6 @@ export function Footer() {
             </a>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <a href={data.socials.find(s => s.name === 'GitLab')?.url} target="_blank" rel="noreferrer" aria-label="GitLab">
-              <Gitlab className="h-5 w-5" />
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
             <a href={data.socials.find(s => s.name === 'LinkedIn')?.url} target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <Linkedin className="h-5 w-5" />
             </a>
