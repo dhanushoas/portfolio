@@ -9,13 +9,13 @@
     {
       "id": "todo-app-image",
       "description": "Screenshot of the TODO App login page",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/datacode-87922.appspot.com/o/todo.png?alt=media&token=72960683-3006-4903-9f1d-50ce09ab3a09",
+      "imageUrl": "/todo-app.jpg",
       "imageHint": "login page"
     },
     {
       "id": "calculator-app-image",
       "description": "Screenshot of the Calculator App",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/datacode-87922.appspot.com/o/calc.png?alt=media&token=90835581-b7ec-4d01-981a-8cb2afc72474",
+      "imageUrl": "/calculator-app.jpg",
       "imageHint": "calculator ui"
     },
     {
@@ -27,13 +27,13 @@
     {
       "id": "employee-portal-image",
       "description": "Screenshot of the OASYS Employee Portal",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/datacode-87922.appspot.com/o/employeeportal.png?alt=media&token=1eac08bd-4b31-496d-a262-5fcd8b52bf21",
+      "imageUrl": "/employee-portal.jpg",
       "imageHint": "employee portal"
     },
     {
       "id": "cooptex-erp-image",
       "description": "Screenshot of the COOPTEX ERP System",
-      "imageUrl": "/cooptex.png",
+      "imageUrl": "/cooptex-erp.jpg",
       "imageHint": "erp system"
     },
     {
