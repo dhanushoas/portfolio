@@ -2,7 +2,6 @@ import {
   Angular,
   Bootstrap,
   Docker,
-  ExpressJs,
   Firebase,
   GitHub,
   GitLab,
@@ -15,9 +14,7 @@ import {
   ReactJs,
   Render,
   Spring,
-  TailwindCSS,
   TypeScript,
-  Vercel,
 } from '@/components/icons';
 
 export const data = {
@@ -43,25 +40,26 @@ export const data = {
     {
       company: 'Oasys Cybernetics Pvt Ltd',
       role: 'Full Stack Developer',
-      period: 'July 2022 – Present',
+      period: 'July 2023 – Present',
       location: 'Chennai',
+      downloadUrl: '/Oasys Joining Letter.pdf',
       tasks: [
         'Developed responsive user interfaces using React and Angular frameworks.',
         'Built reusable components and maintained frontend libraries.',
-        'Integrated frontend with Spring Boot/Node.js backend APIs.',
+        'Integrated frontend with Spring Boot and Node.js backend APIs.',
         'Optimized application performance using lazy loading techniques.',
-        'Managed PostgreSQL and MySQL databases, optimizing queries.',
+        'Managed PostgreSQL and MySQL databases and optimized queries.',
         'Conducted API testing using Postman.',
       ],
     },
     {
-      company: 'Oasys Cybernetics Pvt Ltd',
-      role: 'HelpDesk Executive',
-      period: 'February 2021 – December 2022',
-      location: 'Trichy',
+      company: 'OASYS Institute of Technology',
+      role: 'DDUGKY – Full Stack Development Course',
+      period: 'July 2022 – March 2023',
+      location: 'Tiruchirappalli',
       tasks: [
-        'Resolved client technical issues through systematic troubleshooting.',
-        'Created documentation for common technical problems and solutions.',
+        'Completed full stack development training covering React, Angular, Node.js, Spring Boot, and databases.',
+        'Built real-world projects and implemented frontend-backend integration.',
       ],
     },
     {
@@ -71,7 +69,18 @@ export const data = {
       location: 'Kanchipuram',
       tasks: [
         'Managed logistics data flow from procurement to delivery.',
-        'Improved reporting processes for supply chain visibility.',
+        'Improved reporting processes for enhanced supply chain visibility.',
+      ],
+    },
+    {
+      company: 'Oasys Cybernetics Pvt Ltd',
+      role: 'HelpDesk Executive',
+      period: 'February 2021 – December 2021',
+      location: 'Tiruchirappalli',
+      downloadUrl: '/Help Desk.pdf',
+      tasks: [
+        'Resolved client technical issues through systematic troubleshooting.',
+        'Created technical documentation for recurring issues and solutions.',
       ],
     },
   ],
@@ -81,6 +90,7 @@ export const data = {
       description:
         'Developed and implemented modules for inventory, sales, and finance, ensuring smooth and efficient data flow across departments. Leveraged Angular for dynamic, responsive front-end development. Used PostgreSQL for secure, scalable database management. Collaborated with cross-functional teams to optimize performance and deliver a seamless user experience.',
       tech: ['Angular', 'Java Spring Boot', 'PostgreSQL'],
+      liveDemo: 'https://infotex.in/login',
       image: 'cooptex-erp-image',
     },
     {
@@ -88,6 +98,7 @@ export const data = {
       description:
         'Designed and developed a smart, all-in-one platform for managing employee information, attendance, leave, approvals, and tasks. Implemented easy-to-use workflows, one-time approval systems, and real-time updates to simplify daily HR activities. Built with a clean, intuitive user interface for enhanced usability and productivity. Ensured high efficiency, security, and transparency to keep teams connected and processes streamlined. Integrated React for an interactive front end, Spring Boot for robust backend services, and MySQL for reliable data management.',
       tech: ['React', 'Spring Boot', 'MySQL'],
+      liveDemo: 'https://devportal.oasyscybernetics.in/portal/home',
       image: 'employee-portal-image',
     },
   ],
@@ -96,25 +107,17 @@ export const data = {
       name: 'Tamil Nadu Tourism',
       description:
         'A comprehensive travel and tourism platform for Tamil Nadu. Features include travel mood selection, exploration of heritage sites, spiritual destinations, and customized holiday packages. Built with a focus on vibrant aesthetics and user engagement.',
-      tech: ['React', 'Tailwind CSS', 'Vercel'],
+      tech: ['React'],
       liveDemo: 'https://tt-frontend.vercel.app/',
       image: 'tn-tourism-image',
     },
     {
       name: 'TODO App',
       description:
-        'A full-stack TODO application using the MERN stack (MongoDB, Express.js, React, Node.js). Features include user authentication with Google Sign-In, allowing users to manage their tasks securely.',
-      tech: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Vercel'],
+        'A full-stack TODO application using MongoDB, React, and Node.js. Features include user authentication with Google Sign-In, allowing users to manage their tasks securely.',
+      tech: ['MongoDB', 'React', 'Node.js'],
       liveDemo: 'https://todoapplatest.vercel.app',
       image: 'todo-app-image',
-    },
-    {
-      name: 'Calculator Application',
-      description:
-        'Built a responsive calculator using Angular and Bootstrap with real-time calculation and error handling. Applied modular architecture and clean UI design principles for better maintainability. Deployed using Vercel for continuous integration and quick access.',
-      tech: ['Angular', 'Bootstrap', 'Vercel'],
-      liveDemo: 'https://calculator-nu-gilt.vercel.app/',
-      image: 'calculator-app-image',
     },
     {
       name: 'SMCC - Cricket',
@@ -149,7 +152,6 @@ export const data = {
       technologies: [
         { name: 'Node.js', icon: NodeJs },
         { name: 'Spring Boot', icon: Spring },
-        { name: 'Express.js', icon: ExpressJs },
       ],
     },
     {
@@ -189,6 +191,21 @@ export const data = {
       institution: 'Kongunadu College of Engineering and Technology',
       period: '2015 – 2019',
       grade: 'Percentage: 73% | First Class',
+      downloadUrl: '/BE.pdf',
+    },
+    {
+      degree: 'Bio-Maths (HSC)',
+      institution: 'Government Higher Secondary School',
+      period: '2014 – 2015',
+      grade: 'Percentage: 77%',
+      downloadUrl: '/HSC.pdf',
+    },
+    {
+      degree: 'SSLC',
+      institution: 'Government Higher Secondary School',
+      period: '2012 – 2013',
+      grade: 'Percentage: 92%',
+      downloadUrl: '/SSLC.pdf',
     },
   ],
   certifications: [
@@ -196,6 +213,13 @@ export const data = {
       name: 'Application Developer – Web Mobile (SSC/Q8403), Level 6',
       institution: 'DDUGKY, KRK Educational Trust, Trichy',
       period: 'Sep 2022 – Feb 2023',
+      downloadUrl: '/DDUGKY.pdf',
+    },
+    {
+      name: 'National Service Scheme – Special Camping Certificate',
+      institution: 'Anna University, Chennai (Kongunadu College of Engineering and Technology)',
+      period: 'Feb 2017 – Mar 2017',
+      downloadUrl: '/NSS.pdf',
     },
   ],
 };
