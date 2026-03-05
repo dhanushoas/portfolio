@@ -4,23 +4,32 @@ import { Badge } from "./ui/badge";
 
 export function Skills() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="row g-4">
       {data.skills.map((skillCategory) => (
-        <Card key={skillCategory.category} className="flex flex-col">
-          <CardHeader>
-            <CardTitle className="font-headline text-xl">{skillCategory.category}</CardTitle>
-          </CardHeader>
-          <CardContent className="flex-grow">
-            <div className="flex flex-wrap gap-2 break-words">
-              {skillCategory.technologies.map((tech) => (
-                <Badge key={tech.name} variant="secondary" className="py-1 px-3 text-sm shrink-0">
-                  {tech.icon && <tech.icon className="h-4 w-4 mr-2" />}
-                  {tech.name}
-                </Badge>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        <div key={skillCategory.category} className="col-12 col-md-6 col-lg-4">
+          <Card className="h-100 shadow-sm border-0 hover-lift">
+            <CardHeader className="pb-2">
+              <CardTitle className="font-headline h5 fw-bold text-primary">{skillCategory.category}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="d-flex flex-wrap gap-2">
+                {skillCategory.technologies.map((tech) => (
+                  <Badge
+                    key={tech.name}
+                    variant="secondary"
+                    className="badge rounded-pill bg-light text-dark border py-2 px-3 fw-normal"
+                    style={{ fontSize: '0.85rem' }}
+                  >
+                    <div className="d-flex align-items-center">
+                      {tech.icon && <tech.icon className="me-2" width={16} height={16} />}
+                      {tech.name}
+                    </div>
+                  </Badge>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       ))}
     </div>
   );
