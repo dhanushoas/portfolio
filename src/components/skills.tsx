@@ -11,9 +11,9 @@ export function Skills() {
             <CardTitle className="font-headline text-xl">{skillCategory.category}</CardTitle>
           </CardHeader>
           <CardContent className="flex-grow">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 break-words">
               {skillCategory.technologies.map((tech) => (
-                <Badge key={tech.name} variant="secondary" className="py-1 px-3 text-sm">
+                <Badge key={tech.name} variant="secondary" className="py-1 px-3 text-sm shrink-0">
                   {tech.icon && <tech.icon className="h-4 w-4 mr-2" />}
                   {tech.name}
                 </Badge>

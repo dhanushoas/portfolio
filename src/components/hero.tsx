@@ -16,13 +16,13 @@ export function Hero() {
         </h1>
         <p className="text-xl text-primary font-medium">{data.title}</p>
         <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <Mail className="h-4 w-4" />
-            <a href={`mailto:${data.email}`} className="hover:text-foreground">{data.email}</a>
+          <div className="flex items-center gap-2 min-w-0">
+            <Mail className="h-4 w-4 shrink-0" />
+            <a href={`mailto:${data.email}`} className="hover:text-foreground break-all">{data.email}</a>
           </div>
-          <div className="flex items-center gap-2">
-            <Phone className="h-4 w-4" />
-            <a href={`tel:${data.mobile}`} className="hover:text-foreground">{data.mobile}</a>
+          <div className="flex items-center gap-2 min-w-0">
+            <Phone className="h-4 w-4 shrink-0" />
+            <a href={`tel:${data.mobile}`} className="hover:text-foreground whitespace-nowrap">{data.mobile}</a>
           </div>
           {data.location && (
             <div className="flex items-center gap-2">

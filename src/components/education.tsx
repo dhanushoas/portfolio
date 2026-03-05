@@ -16,9 +16,9 @@ export function Education() {
           {data.education.map((edu, index) => (
             <div key={index} className="flex justify-between items-start gap-4">
               <div className="flex-1">
-                <div className="flex justify-between items-baseline">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
                   <h3 className="font-semibold text-lg">{edu.degree}</h3>
-                  <p className="text-sm text-muted-foreground">{edu.period}</p>
+                  <p className="text-sm text-muted-foreground whitespace-nowrap">{edu.period}</p>
                 </div>
                 <p className="text-muted-foreground">{edu.institution}</p>
                 <p className="text-sm text-muted-foreground mt-1">{edu.grade}</p>
@@ -27,7 +27,7 @@ export function Education() {
                 <a
                   href={edu.downloadUrl}
                   download
-                  className="p-2 rounded-full hover:bg-muted transition-colors text-primary"
+                  className="p-2 rounded-full hover:bg-muted transition-colors text-primary shrink-0"
                   title="Download Certificate"
                 >
                   <FileDown className="h-5 w-5" />
@@ -49,9 +49,9 @@ export function Education() {
           {data.certifications.map((cert, index) => (
             <div key={index} className="flex justify-between items-start gap-4">
               <div className="flex-1">
-                <div className="flex justify-between items-baseline">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
                   <h3 className="font-semibold">{cert.name}</h3>
-                  <p className="text-sm text-muted-foreground text-right">{cert.period}</p>
+                  <p className="text-sm text-muted-foreground whitespace-nowrap sm:text-right">{cert.period}</p>
                 </div>
                 <p className="text-muted-foreground">{cert.institution}</p>
               </div>
@@ -59,7 +59,7 @@ export function Education() {
                 <a
                   href={cert.downloadUrl}
                   download
-                  className="p-2 rounded-full hover:bg-muted transition-colors text-primary"
+                  className="p-2 rounded-full hover:bg-muted transition-colors text-primary shrink-0"
                   title="Download Certificate"
                 >
                   <FileDown className="h-5 w-5" />

@@ -14,11 +14,11 @@ import placeholderImages from '@/lib/placeholder-images.json';
 export function Projects() {
   const allProjects = [...data.projects, ...data.personalProjects];
   const allTech = ["All", ...Array.from(new Set(allProjects.flatMap(p => p.tech)))];
-  
+
   const [filter, setFilter] = useState("All");
 
-  const filteredProjects = filter === 'All' 
-    ? allProjects 
+  const filteredProjects = filter === 'All'
+    ? allProjects
     : allProjects.filter(p => p.tech.includes(filter));
 
   return (
@@ -38,23 +38,35 @@ export function Projects() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredProjects.map((project, index) => {
+        {filteredProjects.map((project: any, index) => {
           const projectImage = 'image' in project ? placeholderImages.placeholderImages.find(p => p.id === project.image) : undefined;
           return (
             <Card key={index} className="flex flex-col group hover:border-primary transition-colors overflow-hidden">
               <CardHeader>
                 <CardTitle className="font-headline text-xl">{project.name}</CardTitle>
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tech.map(t => (
+                  {project.tech.map((t: string) => (
                     <Badge key={t} variant="secondary">{t}</Badge>
                   ))}
                 </div>
               </CardHeader>
-              <CardContent className="flex-grow relative">
-                <p className="text-muted-foreground transition-opacity duration-300 group-hover:opacity-0">{project.description}</p>
-                 {projectImage && (
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <CardContent className="flex-grow flex flex-col gap-4">
+                {projectImage && (
+                  <div className="relative h-48 w-full overflow-hidden rounded-md md:hidden">
                     <Image
+                      src={projectImage.imageUrl}
+                      alt={project.name}
+                      fill
+                      data-ai-hint={projectImage.imageHint}
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+                <div className="relative flex-grow">
+                  <p className="text-muted-foreground transition-opacity duration-300 md:group-hover:opacity-0 break-words">{project.description}</p>
+                  {projectImage && (
+                    <div className="hidden md:block absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Image
                         src={projectImage.imageUrl}
                         alt={project.name}
                         fill
@@ -62,24 +74,25 @@ export function Projects() {
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
-                  </div>
-                 )}
+                    </div>
+                  )}
+                </div>
               </CardContent>
               <CardFooter>
                 <div className="flex items-center gap-4">
                   {'liveDemo' in project && project.liveDemo && (
-                     <Button variant="outline" asChild>
-                       <a href={project.liveDemo} target="_blank" rel="noreferrer">
-                         Live Demo <ArrowUpRight className="h-4 w-4 ml-2" />
-                       </a>
-                     </Button>
+                    <Button variant="outline" asChild>
+                      <a href={project.liveDemo} target="_blank" rel="noreferrer">
+                        Live Demo <ArrowUpRight className="h-4 w-4 ml-2" />
+                      </a>
+                    </Button>
                   )}
-                   {'codeLink' in project && project.codeLink && (
-                     <Button variant="ghost" asChild>
-                       <a href={project.codeLink} target="_blank" rel="noreferrer">
-                         <Github className="h-4 w-4 mr-2" /> View Code
-                       </a>
-                     </Button>
+                  {'codeLink' in project && project.codeLink && (
+                    <Button variant="ghost" asChild>
+                      <a href={project.codeLink} target="_blank" rel="noreferrer">
+                        <Github className="h-4 w-4 mr-2" /> View Code
+                      </a>
+                    </Button>
                   )}
                 </div>
               </CardFooter>
