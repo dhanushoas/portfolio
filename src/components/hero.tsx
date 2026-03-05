@@ -9,33 +9,33 @@ const profilePic = placeholderImages.placeholderImages.find(p => p.id === 'profi
 export function Hero() {
   const resumeUrl = data.resumeUrl;
   return (
-    <div className="row align-items-center flex-column-reverse flex-md-row text-center text-md-start g-5 py-4">
-      <div className="col-md-7">
-        <h1 className="display-4 fw-bold tracking-tighter font-headline mb-3">
+    <div className="flex flex-col-reverse items-center gap-12 text-center md:flex-row md:text-left">
+      <div className="flex-1 space-y-6">
+        <h1 className="text-4xl font-bold tracking-tighter font-headline sm:text-5xl lg:text-6xl">
           {data.name}
         </h1>
-        <p className="h4 text-primary fw-medium mb-4">{data.title}</p>
-        <div className="d-flex flex-wrap justify-content-center justify-content-md-start mb-4 gap-3 text-muted">
-          <div className="d-flex align-items-center gap-2">
-            <Mail className="h-5 w-5" />
-            <a href={`mailto:${data.email}`} className="text-decoration-none text-reset hover-primary">{data.email}</a>
+        <p className="text-xl text-primary font-medium">{data.title}</p>
+        <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 min-w-0">
+            <Mail className="h-4 w-4 shrink-0" />
+            <a href={`mailto:${data.email}`} className="hover:text-foreground break-all">{data.email}</a>
           </div>
-          <div className="d-flex align-items-center gap-2">
-            <Phone className="h-5 w-5" />
-            <a href={`tel:${data.mobile}`} className="text-decoration-none text-reset hover-primary">{data.mobile}</a>
+          <div className="flex items-center gap-2 min-w-0">
+            <Phone className="h-4 w-4 shrink-0" />
+            <a href={`tel:${data.mobile}`} className="hover:text-foreground whitespace-nowrap">{data.mobile}</a>
           </div>
           {data.location && (
-            <div className="d-flex align-items-center gap-2">
-              <span className="text-muted">Location:</span>
+            <div className="flex items-center gap-2">
+              <span className="text-muted-foreground">Location:</span>
               <span>{data.location}</span>
             </div>
           )}
         </div>
-        <p className="lead text-muted mb-4 opacity-75">
+        <p className="max-w-prose text-muted-foreground leading-relaxed">
           {data.summary}
         </p>
-        <div className="d-flex gap-3 justify-content-center justify-content-md-start">
-          <Button asChild className="btn btn-primary px-4 py-2">
+        <div className="flex gap-4 justify-center md:justify-start">
+          <Button asChild>
             <a href={resumeUrl} download="Dhanush_Kumar_T.docx" target="_blank" rel="noopener noreferrer">
               <Download className="mr-2 h-4 w-4" />
               Download CV
@@ -43,25 +43,23 @@ export function Hero() {
           </Button>
         </div>
       </div>
-      <div className="col-md-5 d-flex justify-content-center">
-        <div className="position-relative">
-          {profilePic && (
-            <div className="position-relative overflow-hidden rounded-circle border border-4 border-primary border-opacity-25 shadow-lg" style={{ width: '250px', height: '250px' }}>
-              <Image
-                src={profilePic.imageUrl}
-                alt={data.name}
-                fill
-                priority
-                quality={100}
-                data-ai-hint={profilePic.imageHint}
-                className="object-fit-cover"
-                sizes="(max-width: 640px) 384px, 512px"
-              />
-            </div>
-          )}
-          <div className="position-absolute bottom-0 end-0 bg-accent rounded-circle z-n1 pulse-animation" style={{ width: '80px', height: '80px', transform: 'translate(20%, 20%)' }}></div>
-          <div className="position-absolute top-0 start-0 bg-primary rounded-3 z-n1 pulse-animation" style={{ width: '60px', height: '60px', transform: 'translate(-20%, -20%)' }}></div>
-        </div>
+      <div className="relative">
+        {profilePic && (
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 overflow-hidden rounded-full border-4 border-primary/20 shadow-lg">
+            <Image
+              src={profilePic.imageUrl}
+              alt={data.name}
+              fill
+              priority
+              quality={100}
+              data-ai-hint={profilePic.imageHint}
+              className="object-cover"
+              sizes="(max-width: 640px) 384px, 512px"
+            />
+          </div>
+        )}
+        <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-accent rounded-full -z-10 animate-pulse"></div>
+        <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary rounded-lg -z-10 animate-pulse delay-75"></div>
       </div>
     </div>
   );

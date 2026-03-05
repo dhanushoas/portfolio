@@ -11,24 +11,24 @@ export default function Home() {
   return (
     <div className="bg-background text-foreground">
       <Header />
-      <main className="container py-5">
-        <div id="hero" className="py-5 mt-5">
+      <main className="container mx-auto max-w-5xl px-4 md:px-8">
+        <div id="hero" className="pt-24 lg:pt-32">
           <Hero />
         </div>
-        <div id="experience" className="py-5">
-          <h2 className="display-6 fw-bold text-center mb-5 font-headline">Work Experience</h2>
+        <div id="experience" className={sectionGap}>
+          <h2 className="text-3xl font-bold tracking-tight text-center font-headline mb-12">Work Experience</h2>
           <Experience />
         </div>
-        <div id="skills" className="py-5">
-          <h2 className="display-6 fw-bold text-center mb-5 font-headline">Key Skills</h2>
+        <div id="skills" className={sectionGap}>
+          <h2 className="text-3xl font-bold tracking-tight text-center font-headline mb-12">Key Skills</h2>
           <Skills />
         </div>
-        <div id="projects" className="py-5">
-          <h2 className="display-6 fw-bold text-center mb-5 font-headline">Projects</h2>
+        <div id="projects" className={sectionGap}>
+          <h2 className="text-3xl font-bold tracking-tight text-center font-headline mb-12">Projects</h2>
           <Projects />
         </div>
-        <div id="education" className="py-5">
-          <h2 className="display-6 fw-bold text-center mb-5 font-headline">Education & Certifications</h2>
+        <div id="education" className={sectionGap}>
+          <h2 className="text-3xl font-bold tracking-tight text-center font-headline mb-12">Education & Certifications</h2>
           <Education />
         </div>
       </main>

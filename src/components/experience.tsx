@@ -3,39 +3,33 @@ import { Briefcase, FileDown } from "lucide-react"
 
 export function Experience() {
   return (
-    <div className="position-relative">
-      <div className="position-absolute start-0 top-0 bottom-0 border-start border-1 border-secondary" style={{ left: '0', marginLeft: '-15px' }}></div>
+    <div className="relative">
+      <div className="absolute left-0 top-0 bottom-0 w-px bg-border -translate-x-3 md:translate-x-0"></div>
       {data.workExperience.map((job, index) => (
-        <div key={index} className="position-relative ps-4 mb-5">
-          <div className="position-absolute start-0 top-0 translate-middle-x rounded-circle bg-white d-flex align-items-center justify-content-center border border-2 border-primary shadow-sm" style={{ width: '28px', height: '28px', marginLeft: '-15px', marginTop: '10px' }}>
-            <Briefcase className="h-4 w-4 text-primary" style={{ width: '14px', height: '14px' }} />
+        <div key={index} className="relative pl-8 md:pl-10 mb-12 last:mb-0">
+          <div className="absolute left-0 top-1.5 -translate-x-6 md:-translate-x-3.5 h-6 w-6 rounded-full bg-background flex items-center justify-center border-2 border-primary">
+            <Briefcase className="h-3 w-3 text-primary" />
           </div>
-          <div className="ps-2">
-            <span className="small text-muted text-uppercase tracking-wider fw-semibold italic">{job.period}</span>
-            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-start gap-2 mb-1 mt-1">
-              <h3 className="h5 fw-bold font-headline mb-0">{job.role}</h3>
-              {job.downloadUrl && (
-                <a
-                  href={job.downloadUrl}
-                  download
-                  className="btn btn-sm btn-outline-primary rounded-pill d-inline-flex align-items-center"
-                  title="Download"
-                >
-                  <FileDown size={14} className="me-1" />
-                  <span style={{ fontSize: '0.75rem' }}>Docs</span>
-                </a>
-              )}
-            </div>
-            <p className="text-secondary fw-medium mb-3">{job.company} <span className="text-muted mx-1">•</span> {job.location}</p>
-            <ul className="list-unstyled mb-0">
-              {job.tasks.map((task, i) => (
-                <li key={i} className="mb-2 d-flex align-items-start">
-                  <span className="text-primary me-2">•</span>
-                  <span className="text-muted small">{task}</span>
-                </li>
-              ))}
-            </ul>
+          <p className="text-sm text-muted-foreground">{job.period}</p>
+          <div className="flex flex-col sm:flex-row justify-between items-start gap-2 sm:gap-4">
+            <h3 className="font-semibold text-lg font-headline mt-1 flex-1">{job.role}</h3>
+            {job.downloadUrl && (
+              <a
+                href={job.downloadUrl}
+                download
+                className="p-2 rounded-full hover:bg-muted transition-colors text-primary shrink-0"
+                title="Download Certificate / Joining Letter"
+              >
+                <FileDown className="h-5 w-5" />
+              </a>
+            )}
           </div>
+          <p className="text-muted-foreground font-medium">{job.company} - {job.location}</p>
+          <ul className="mt-4 space-y-2 list-disc list-inside text-muted-foreground break-words">
+            {job.tasks.map((task, i) => (
+              <li key={i}>{task}</li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
