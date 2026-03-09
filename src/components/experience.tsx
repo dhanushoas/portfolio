@@ -9,12 +9,14 @@ export function Experience() {
   const displayedExperience = showAll ? data.workExperience : data.workExperience.slice(0, 2)
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
       <div className="relative w-full">
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-border -translate-x-3 md:translate-x-0"></div>
+        {/* Centered timeline line relative to container, no negative margins */}
+        <div className="absolute left-3 md:left-4 top-0 bottom-0 w-px bg-border"></div>
         {displayedExperience.map((job, index) => (
-          <div key={index} className="relative pl-8 md:pl-10 mb-12 last:mb-0">
-            <div className="absolute left-0 top-1.5 -translate-x-6 md:-translate-x-3.5 h-6 w-6 rounded-full bg-background flex items-center justify-center border-2 border-primary">
+          <div key={index} className="relative pl-10 md:pl-12 mb-12 last:mb-0">
+            {/* Center the icon directly on the timeline line, with no screen overflow */}
+            <div className="absolute left-3 md:left-4 top-1.5 -translate-x-1/2 h-6 w-6 rounded-full bg-background flex items-center justify-center border-2 border-primary">
               <Briefcase className="h-3 w-3 text-primary" />
             </div>
             <p className="text-sm text-muted-foreground">{job.period}</p>
