@@ -20,7 +20,7 @@ export function Experience() {
               <Briefcase className="h-3 w-3 text-primary" />
             </div>
             <p className="text-sm text-muted-foreground">{job.period}</p>
-            <div className="flex flex-col sm:flex-row justify-between items-start gap-2 sm:gap-4">
+            <div className="flex justify-between items-start gap-4">
               <h3 className="font-semibold text-lg font-headline mt-1 flex-1">{job.role}</h3>
               {job.downloadUrl && (
                 <a
