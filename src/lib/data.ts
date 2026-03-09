@@ -57,6 +57,7 @@ export const data = {
       role: 'DDUGKY – Full Stack Development Course',
       period: 'July 2022 – March 2023',
       location: 'Tiruchirappalli',
+      downloadUrl: '/DDUGKY.pdf',
       tasks: [
         'Completed full stack development training covering React, Angular, Node.js, Spring Boot, and databases.',
         'Built real-world projects and implemented frontend-backend integration.',
