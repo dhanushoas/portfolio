@@ -23,7 +23,7 @@ export const data = {
   email: 'dhanushkrock@gmail.com',
   mobile: '7708522584',
   location: 'Trichy, Tamil Nadu',
-  resumeUrl: '/Dhanush_Kumar_T.docx',
+  resumeUrl: '/Dhanush_Kumar_T.pdf',
   socials: [
     {
       name: 'LinkedIn',
