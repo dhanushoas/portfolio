@@ -31,6 +31,12 @@
       "imageHint": "employee portal"
     },
     {
+      "id": "tnpds-image",
+      "description": "Screenshot of the Tamil Nadu Public Distribution System portal",
+      "imageUrl": "/tnpds.jpg",
+      "imageHint": "government portal"
+    },
+    {
       "id": "cooptex-erp-image",
       "description": "Screenshot of the COOPTEX ERP System",
       "imageUrl": "/cooptex-erp.jpg",

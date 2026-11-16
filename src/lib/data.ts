@@ -44,6 +44,7 @@ export const data = {
       location: 'Chennai',
       downloadUrl: '/Oasys Joining Letter.pdf',
       tasks: [
+        'Developed smart card, login, complaint and reporting modules for the Tamil Nadu Public Distribution System portal (tnpds.gov.in) using Angular, Java 21 and MySQL.',
         'Developed responsive user interfaces using React and Angular frameworks.',
         'Built reusable components and maintained frontend libraries.',
         'Integrated frontend with Spring Boot and Node.js backend APIs.',
@@ -86,6 +87,14 @@ export const data = {
     },
   ],
   projects: [
+    {
+      name: 'Tamil Nadu Public Distribution System (TNPDS)',
+      description:
+        'Developed features for the official PDS portal of the Civil Supplies and Consumer Protection Department, Government of Tamil Nadu, serving over 2.2 crore family cards across the state. Built smart card services – new smart card applications, duplicate smart cards and application status tracking – along with citizen and department login, complaint registration and NFSA / PDS reporting modules. Supported citizens, fair price shop staff and department officials by resolving issues raised on the portal.',
+      tech: ['Angular', 'Java 21', 'MySQL'],
+      liveDemo: 'https://www.tnpds.gov.in/pages/home',
+      image: 'tnpds-image',
+    },
     {
       name: 'COOPTEX ERP System',
       description:
