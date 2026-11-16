@@ -25,15 +25,15 @@ CONTACT = [
 ]
 SUMMARY = (
     "Full Stack Developer with 3+ years of experience building secure, scalable web applications with Java, Spring Boot, "
-    "Angular, and React. Develops features for the Tamil Nadu Public Distribution System portal (tnpds.gov.in), a state-wide "
-    "government service. Skilled in RESTful API design, JWT-based authentication, and database management (PostgreSQL, MySQL). "
+    "Angular, and React. Develops the Tamil Nadu Public Distribution System portal (tnpds.gov.in), a state-wide government "
+    "service, and is migrating it from a monolith to microservices. Skilled in RESTful API design, JWT-based authentication, and database management (PostgreSQL, MySQL). "
     "Delivered core Co-Optex ERP features—secure authentication and QR-code product tracking—that improved user engagement "
     "by 10% and strengthened supply chain visibility."
 )
 SKILLS = [
     ("Languages", "Java (incl. Java 21), TypeScript, JavaScript, SQL, HTML, CSS"),
     ("Frameworks &amp; Libraries", "Spring Boot, Angular, React, Angular CLI"),
-    ("Backend &amp; APIs", "RESTful APIs, JWT Authentication, Java Collections, Multithreading, Exception Handling, DTO-based Design"),
+    ("Backend &amp; APIs", "RESTful APIs, Microservices, JWT Authentication, Java Collections, Multithreading, Exception Handling, DTO-based Design"),
     ("Databases", "PostgreSQL, MySQL"),
     ("Tools &amp; Build", "Maven, Gradle, NPM, Postman, Git, GitHub"),
     ("Practices", "Agile / SDLC, Code Review, Debugging, Unit Testing, Software Documentation"),
@@ -46,6 +46,7 @@ EXPERIENCE = [
         "bullets": [
             "Developed smart card services, citizen and department login, complaint registration and NFSA / PDS reporting "
             "modules for the Tamil Nadu Public Distribution System portal (tnpds.gov.in) using Angular, Java 21 and MySQL.",
+            "Migrating the TNPDS application from a monolithic architecture to microservices.",
             "Engineered and maintained 12+ Spring Boot REST APIs for branch, user, and designation management within the "
             "Co-Optex ERP system.",
             "Implemented JWT-based authentication and authorization, securing 12+ API endpoints across login and registration workflows.",
@@ -66,7 +67,7 @@ EXPERIENCE = [
 PROJECTS = [
     {
         "name": "Tamil Nadu Public Distribution System (TNPDS) — tnpds.gov.in",
-        "tech": "Angular, Java 21, MySQL",
+        "tech": "Angular, Java 21, MySQL, Microservices",
         "bullets": [
             "Built smart card services – new and duplicate smart card applications and application status tracking – for the "
             "Government of Tamil Nadu's PDS portal serving 2.2 crore+ family cards.",
@@ -118,7 +119,7 @@ BASE = 8.7
 s_name = ParagraphStyle("name", fontName="Helvetica-Bold", fontSize=22, leading=24, textColor=INK)
 s_title = ParagraphStyle("title", fontName="Helvetica-Bold", fontSize=11.5, leading=14, textColor=MUTED)
 s_contact = ParagraphStyle("contact", fontName="Helvetica", fontSize=8.4, leading=11, textColor=MUTED)
-s_h = ParagraphStyle("h", fontName="Helvetica-Bold", fontSize=10.2, leading=11.5, textColor=INK, spaceBefore=3.5)
+s_h = ParagraphStyle("h", fontName="Helvetica-Bold", fontSize=10.2, leading=11.5, textColor=INK, spaceBefore=3)
 s_body = ParagraphStyle("body", fontName="Helvetica", fontSize=BASE, leading=BASE * 1.18, textColor=INK, alignment=TA_JUSTIFY)
 s_text = ParagraphStyle("text", fontName="Helvetica", fontSize=BASE, leading=BASE * 1.18, textColor=INK)
 s_bold = ParagraphStyle("bold", parent=s_text, fontName="Helvetica-Bold")

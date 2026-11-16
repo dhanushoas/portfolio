@@ -2,101 +2,104 @@
 import { useState } from "react";
 import Image from 'next/image';
 import { data } from "@/lib/data";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
-import { Badge } from "./ui/badge";
+import { ArrowUpRight, Briefcase, Github, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
-import { ArrowUpRight, Github } from "lucide-react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import { Reveal } from "./reveal";
 import { cn } from "@/lib/utils";
 import placeholderImages from '@/lib/placeholder-images.json';
 
+type Project = { name: string; description: string; tech: string[]; liveDemo?: string; codeLink?: string; image?: string; kind: 'Professional' | 'Personal' };
 
 export function Projects() {
-  const allProjects = [...data.projects, ...data.personalProjects];
-  const allTech = ["All", ...Array.from(new Set(allProjects.flatMap(p => p.tech)))];
-
+  const allProjects: Project[] = [
+    ...data.projects.map((p) => ({ ...p, kind: 'Professional' as const })),
+    ...data.personalProjects.map((p) => ({ ...p, kind: 'Personal' as const })),
+  ];
+  const allTech = ["All", ...Array.from(new Set(allProjects.flatMap((p) => p.tech)))];
   const [filter, setFilter] = useState("All");
-
-  const filteredProjects = filter === 'All'
-    ? allProjects
-    : allProjects.filter(p => p.tech.includes(filter));
+  const shown = filter === 'All' ? allProjects : allProjects.filter((p) => p.tech.includes(filter));
 
   return (
     <div>
-      <div className="flex justify-center mb-8">
-        <div className="w-full sm:w-64">
-          <Select value={filter} onValueChange={setFilter}>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Filter by technology" />
-            </SelectTrigger>
-            <SelectContent>
-              {allTech.map(tech => (
-                <SelectItem key={tech} value={tech}>{tech}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+      {/* Filter chips – scroll sideways on small screens */}
+      <div role="toolbar" aria-label="Filter projects by technology" className="no-scrollbar -mx-4 mb-8 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:justify-center sm:px-0">
+        {allTech.map((tech) => (
+          <button
+            key={tech}
+            type="button"
+            onClick={() => setFilter(tech)}
+            aria-pressed={filter === tech}
+            className={cn(
+              "shrink-0 rounded-full border px-4 py-1.5 text-sm font-medium transition-all",
+              filter === tech
+                ? "border-transparent bg-gradient-to-r from-primary to-accent text-white shadow-md shadow-primary/25"
+                : "bg-card/70 text-muted-foreground backdrop-blur hover:border-primary/40 hover:text-foreground",
+            )}
+          >
+            {tech}
+          </button>
+        ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredProjects.map((project: any, index) => {
-          const projectImage = 'image' in project ? placeholderImages.placeholderImages.find(p => p.id === project.image) : undefined;
+
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {shown.map((project, index) => {
+          const img = project.image ? placeholderImages.placeholderImages.find((p) => p.id === project.image) : undefined;
           return (
-            <Card key={index} className="flex flex-col group hover:border-primary transition-colors overflow-hidden">
-              <CardHeader>
-                <CardTitle className="font-headline text-xl">{project.name}</CardTitle>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tech.map((t: string) => (
-                    <Badge key={t} variant="secondary">{t}</Badge>
-                  ))}
-                </div>
-              </CardHeader>
-              <CardContent className="flex-grow flex flex-col gap-4">
-                {projectImage && (
-                  <div className="relative h-48 w-full overflow-hidden rounded-md md:hidden">
+            <Reveal key={project.name} delay={(index % 2) * 90} className="h-full">
+              <article className="glass-card glass-card-hover group flex h-full flex-col overflow-hidden">
+                {/* Screenshot */}
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
+                  {img ? (
                     <Image
-                      src={projectImage.imageUrl}
-                      alt={project.name}
+                      src={img.imageUrl}
+                      alt={`Screenshot of ${project.name}`}
                       fill
-                      data-ai-hint={projectImage.imageHint}
-                      className="object-cover"
+                      data-ai-hint={img.imageHint}
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 480px"
                     />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-accent/20 to-pink-500/20" />
+                  )}
+                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-black/0" />
+                  <span
+                    className={cn(
+                      "absolute left-3 top-3 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold shadow-md backdrop-blur",
+                      project.kind === 'Professional' ? "bg-primary/90 text-white" : "bg-white/90 text-gray-900",
+                    )}
+                  >
+                    {project.kind === 'Professional' ? <Briefcase className="h-3 w-3" /> : <Sparkles className="h-3 w-3" />}
+                    {project.kind}
+                  </span>
+                </div>
+
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <h3 className="font-headline text-xl font-semibold leading-snug">{project.name}</h3>
+                  <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Technologies">
+                    {project.tech.map((t) => (
+                      <li key={t} className="rounded-md bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary dark:text-accent">{t}</li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 flex-1 break-words text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+                  <div className="mt-5 flex flex-wrap items-center gap-3">
+                    {project.liveDemo && (
+                      <Button asChild size="sm" className="bg-gradient-to-r from-primary to-accent shadow-md shadow-primary/20 hover:opacity-95">
+                        <a href={project.liveDemo} target="_blank" rel="noreferrer">
+                          Live site <ArrowUpRight className="ml-1.5 h-4 w-4" />
+                        </a>
+                      </Button>
+                    )}
+                    {project.codeLink && (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={project.codeLink} target="_blank" rel="noreferrer">
+                          <Github className="mr-1.5 h-4 w-4" /> Code
+                        </a>
+                      </Button>
+                    )}
                   </div>
-                )}
-                <div className="relative flex-grow">
-                  <p className="text-muted-foreground transition-opacity duration-300 md:group-hover:opacity-0 break-words">{project.description}</p>
-                  {projectImage && (
-                    <div className="hidden md:block absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Image
-                        src={projectImage.imageUrl}
-                        alt={project.name}
-                        fill
-                        data-ai-hint={projectImage.imageHint}
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                    </div>
-                  )}
                 </div>
-              </CardContent>
-              <CardFooter>
-                <div className="flex items-center gap-4">
-                  {'liveDemo' in project && project.liveDemo && (
-                    <Button variant="outline" asChild>
-                      <a href={project.liveDemo} target="_blank" rel="noreferrer">
-                        Live Demo <ArrowUpRight className="h-4 w-4 ml-2" />
-                      </a>
-                    </Button>
-                  )}
-                  {'codeLink' in project && project.codeLink && (
-                    <Button variant="ghost" asChild>
-                      <a href={project.codeLink} target="_blank" rel="noreferrer">
-                        <Github className="h-4 w-4 mr-2" /> View Code
-                      </a>
-                    </Button>
-                  )}
-                </div>
-              </CardFooter>
-            </Card>
+              </article>
+            </Reveal>
           );
         })}
       </div>

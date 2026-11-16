@@ -5,32 +5,35 @@ import { Skills } from '@/components/skills';
 import { Projects } from '@/components/projects';
 import { Education } from '@/components/education';
 import { Footer } from '@/components/footer';
+import { Backdrop } from '@/components/backdrop';
+import { SectionHeading } from '@/components/section-heading';
 
 export default function Home() {
   const sectionGap = "py-16 lg:py-24";
   return (
-    <div className="bg-background text-foreground">
+    <div className="relative text-foreground">
+      <Backdrop />
       <Header />
       <main className="container mx-auto max-w-5xl px-4 md:px-8">
-        <div id="hero" className="pt-24 lg:pt-32">
+        <section id="hero" className="pt-28 lg:pt-36">
           <Hero />
-        </div>
-        <div id="experience" className={sectionGap}>
-          <h2 className="text-3xl font-bold tracking-tight text-center font-headline mb-12">Work Experience</h2>
+        </section>
+        <section id="experience" className={sectionGap}>
+          <SectionHeading index="01" eyebrow="Career" title="Work Experience" subtitle="Where I've worked and what I've delivered." />
           <Experience />
-        </div>
-        <div id="skills" className={sectionGap}>
-          <h2 className="text-3xl font-bold tracking-tight text-center font-headline mb-12">Key Skills</h2>
+        </section>
+        <section id="skills" className={sectionGap}>
+          <SectionHeading index="02" eyebrow="Toolbox" title="Key Skills" subtitle="Languages, frameworks and tools I use every day." />
           <Skills />
-        </div>
-        <div id="projects" className={sectionGap}>
-          <h2 className="text-3xl font-bold tracking-tight text-center font-headline mb-12">Projects</h2>
+        </section>
+        <section id="projects" className={sectionGap}>
+          <SectionHeading index="03" eyebrow="Portfolio" title="Projects" subtitle="Government, enterprise and personal projects – filter by technology." />
           <Projects />
-        </div>
-        <div id="education" className={sectionGap}>
-          <h2 className="text-3xl font-bold tracking-tight text-center font-headline mb-12">Education & Certifications</h2>
+        </section>
+        <section id="education" className={sectionGap}>
+          <SectionHeading index="04" eyebrow="Learning" title="Education & Certifications" />
           <Education />
-        </div>
+        </section>
       </main>
       <Footer />
     </div>
