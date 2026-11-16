@@ -19,7 +19,9 @@ NAME = "DHANUSH KUMAR T"
 TITLE = "Full Stack Developer"
 CONTACT = [
     "Trichy, Tamil Nadu, India  •  +91 7708522584  •  dhanushkrock@gmail.com",
-    "linkedin.com/in/dhanush-kumar-t-7b8268281  •  github.com/dhanushoas  •  portfolio-psi-swart38.vercel.app",
+    '<a href="https://www.linkedin.com/in/dhanush-kumar-t-7b8268281">linkedin.com/in/dhanush-kumar-t-7b8268281</a>  •  '
+    '<a href="https://github.com/dhanushoas">github.com/dhanushoas</a>  •  '
+    '<a href="https://portfolio-psi-swart-38.vercel.app">portfolio-psi-swart-38.vercel.app</a>',
 ]
 SUMMARY = (
     "Full Stack Developer with 3+ years of experience building secure, scalable web applications with Java, Spring Boot, "
